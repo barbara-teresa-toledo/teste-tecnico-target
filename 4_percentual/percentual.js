@@ -1,23 +1,20 @@
 function calcularPercentuaisDeRepresentacao(faturamentos) {
-  // Calculando o valor total mensal da distribuidora
   const valorTotal = Object.values(faturamentos).reduce(
     (total, valor) => total + valor
   );
 
-  // Calculando o percentual de representação de cada estado
+ 
   const percentuais = {};
   for (const estado in faturamentos) {
     percentuais[estado] = (faturamentos[estado] / valorTotal) * 100;
   }
 
-  // Retornando um objeto contendo o valor total e os percentuais de representação
   return {
     valorTotal: valorTotal,
     percentuais: percentuais,
   };
 }
 
-// Exemplo de uso da função com os mesmos dados do exemplo anterior
 const faturamentos = {
   SP: 67836.43,
   RJ: 36678.66,
